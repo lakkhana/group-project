@@ -1,0 +1,7 @@
+parameters:
+#    ucsc_database.example.class: UCSC\DatabaseBundle\Example
+
+services:
+#    ucsc_database.example:
+#        class: %ucsc_database.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
