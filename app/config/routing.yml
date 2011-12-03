@@ -1,3 +1,7 @@
+UCSCRegistrationBundle:
+    resource: "@UCSCRegistrationBundle/Resources/config/routing.yml"
+    prefix:   /
+
 UCSCDatabaseBundle:
     resource: "@UCSCDatabaseBundle/Resources/config/routing.yml"
     prefix:   /

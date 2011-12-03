@@ -93,6 +93,27 @@ class Student
         $this->results = new ArrayCollection();
     }
     
+
+    /**
+     * Set regNo
+     *
+     * @param string $regNo
+     */
+    public function setRegNo($regNo)
+    {
+        $this->regNo = $regNo;
+    }
+
+    /**
+     * Get regNo
+     *
+     * @return string 
+     */
+    public function getRegNo()
+    {
+        return $this->regNo;
+    }
+
     /**
      * Set name
      *
@@ -111,6 +132,86 @@ class Student
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set gender
+     *
+     * @param string $gender
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+    }
+
+    /**
+     * Get gender
+     *
+     * @return string 
+     */
+    public function getGender()
+    {
+        return $this->gender;
+    }
+
+    /**
+     * Set degree
+     *
+     * @param string $degree
+     */
+    public function setDegree($degree)
+    {
+        $this->degree = $degree;
+    }
+
+    /**
+     * Get degree
+     *
+     * @return string 
+     */
+    public function getDegree()
+    {
+        return $this->degree;
+    }
+
+    /**
+     * Set nic
+     *
+     * @param string $nic
+     */
+    public function setNic($nic)
+    {
+        $this->nic = $nic;
+    }
+
+    /**
+     * Get nic
+     *
+     * @return string 
+     */
+    public function getNic()
+    {
+        return $this->nic;
+    }
+
+    /**
+     * Set bday
+     *
+     * @param date $bday
+     */
+    public function setBday($bday)
+    {
+        $this->bday = $bday;
+    }
+
+    /**
+     * Get bday
+     *
+     * @return date 
+     */
+    public function getBday()
+    {
+        return $this->bday;
     }
 
     /**
@@ -154,6 +255,26 @@ class Student
     }
 
     /**
+     * Set phone
+     *
+     * @param integer $phone
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+    }
+
+    /**
+     * Get phone
+     *
+     * @return integer 
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
      * Set indexNo
      *
      * @param integer $indexNo
@@ -174,31 +295,11 @@ class Student
     }
 
     /**
-     * Set regNo
-     *
-     * @param string $regNo
-     */
-    public function setRegNo($regNo)
-    {
-        $this->regNo = $regNo;
-    }
-
-    /**
-     * Get regNo
-     *
-     * @return string 
-     */
-    public function getRegNo()
-    {
-        return $this->regNo;
-    }
-
-    /**
      * Add results
      *
-     * @param Group\TestBundle\Entity\Result $results
+     * @param UCSC\DatabaseBundle\Entity\Result $results
      */
-    public function addResult(\Group\TestBundle\Entity\Result $results)
+    public function addResult(\UCSC\DatabaseBundle\Entity\Result $results)
     {
         $this->results[] = $results;
     }

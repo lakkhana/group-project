@@ -48,8 +48,7 @@ class Result
      */
     protected $courseID;
     
-    
-    
+
     /**
      * Get id
      *
@@ -103,9 +102,9 @@ class Result
     /**
      * Set studentID
      *
-     * @param Group\TestBundle\Entity\Student $studentID
+     * @param UCSC\DatabaseBundle\Entity\Student $studentID
      */
-    public function setStudentID(\Group\TestBundle\Entity\Student $studentID)
+    public function setStudentID(\UCSC\DatabaseBundle\Entity\Student $studentID)
     {
         $this->studentID = $studentID;
     }
@@ -113,7 +112,7 @@ class Result
     /**
      * Get studentID
      *
-     * @return Group\TestBundle\Entity\Student 
+     * @return UCSC\DatabaseBundle\Entity\Student 
      */
     public function getStudentID()
     {
@@ -123,9 +122,9 @@ class Result
     /**
      * Set courseID
      *
-     * @param Group\TestBundle\Entity\Course $courseID
+     * @param UCSC\DatabaseBundle\Entity\Course $courseID
      */
-    public function setCourseID(\Group\TestBundle\Entity\Course $courseID)
+    public function setCourseID(\UCSC\DatabaseBundle\Entity\Course $courseID)
     {
         $this->courseID = $courseID;
     }
@@ -133,7 +132,7 @@ class Result
     /**
      * Get courseID
      *
-     * @return Group\TestBundle\Entity\Course 
+     * @return UCSC\DatabaseBundle\Entity\Course 
      */
     public function getCourseID()
     {

@@ -1,0 +1,7 @@
+parameters:
+#    ucsc_registration.example.class: UCSC\RegistrationBundle\Example
+
+services:
+#    ucsc_registration.example:
+#        class: %ucsc_registration.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

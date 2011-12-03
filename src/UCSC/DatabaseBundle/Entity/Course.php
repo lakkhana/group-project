@@ -43,6 +43,7 @@ class Course
     {
         $this->results = new ArrayCollection();
     }
+    
 
     /**
      * Set courseID
@@ -107,9 +108,9 @@ class Course
     /**
      * Add results
      *
-     * @param Group\TestBundle\Entity\Result $results
+     * @param UCSC\DatabaseBundle\Entity\Result $results
      */
-    public function addResult(\Group\TestBundle\Entity\Result $results)
+    public function addResult(\UCSC\DatabaseBundle\Entity\Result $results)
     {
         $this->results[] = $results;
     }
