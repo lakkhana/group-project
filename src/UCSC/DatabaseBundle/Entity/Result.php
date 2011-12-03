@@ -19,21 +19,21 @@ class Result
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var integer $score
      *
      * @ORM\Column(name="score", type="integer")
      */
-    private $score;
+    protected $score;
 
     /**
      * @var smallint $term
      *
      * @ORM\Column(name="term", type="smallint")
      */
-    private $term;
+    protected $term;
 
 
     /**

@@ -18,35 +18,70 @@ class Student
      * @ORM\Id
      * @ORM\Column(name="regNo", type="string", length=10)
      */
-    private $regNo;
+    protected $regNo;
 
     /**
      * @var string $name
      *
      * @ORM\Column(name="name", type="string", length=255)
      */
-    private $name;
+    protected $name;
+    
+    /**
+     * @var string $gender
+     *
+     * @ORM\Column(name="gender", type="string", length=2)
+     */
+    protected $gender;
+    
+    /**
+     * @var string $degree
+     *
+     * @ORM\Column(name="degree", type="string", length=4)
+     */
+    protected $degree;
+    
+    /**
+     * @var string $nic
+     *
+     * @ORM\Column(name="nic", type="string", length=12)
+     */
+    protected $nic;    
 
+    /**
+     * @var date $bday
+     *
+     * @ORM\Column(name="bday", type="date")
+     */
+    protected $bday;
+    
     /**
      * @var string $address
      *
      * @ORM\Column(name="address", type="string", length=255)
      */
-    private $address;
+    protected $address;
 
     /**
      * @var string $email
      *
      * @ORM\Column(name="email", type="string", length=255)
      */
-    private $email;
+    protected $email;
+    
+    /**
+     * @var integer $phone
+     *
+     * @ORM\Column(name="phone", type="integer")
+     */
+    protected $phone;
 
     /**
      * @var integer $indexNo
      *
      * @ORM\Column(name="indexNo", type="integer")
      */
-    private $indexNo;
+    protected $indexNo;
 
     /**
      * @ORM\OneToMany(targetEntity="Result", mappedBy="studentID")

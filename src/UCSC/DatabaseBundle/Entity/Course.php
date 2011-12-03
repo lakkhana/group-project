@@ -18,21 +18,21 @@ class Course
      * @ORM\Id
      * @ORM\Column(name="courseID", type="string", length=8)
      */
-    private $courseID;
+    protected $courseID;
 
     /**
      * @var string $name
      *
      * @ORM\Column(name="name", type="string", length=255)
      */
-    private $name;
+    protected $name;
 
     /**
      * @var smallint $credit
      *
      * @ORM\Column(name="credit", type="smallint")
      */
-    private $credit;
+    protected $credit;
     
     /**
      * @ORM\OneToMany(targetEntity="Result", mappedBy="courseID")
