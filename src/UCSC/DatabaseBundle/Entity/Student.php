@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * Group\TestBundle\Entity\Student
+ * UCSC\DatabaseBundle\Entity\Student
  *
  * @ORM\Table()
  * @ORM\Entity

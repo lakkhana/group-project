@@ -1,6 +1,6 @@
 <?php
 
-namespace UCSC\RegistrationBundle\Tests\Controller;
+namespace UCSC\SecurityBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

@@ -1,0 +1,7 @@
+parameters:
+#    ucsc_security.example.class: UCSC\SecurityBundle\Example
+
+services:
+#    ucsc_security.example:
+#        class: %ucsc_security.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

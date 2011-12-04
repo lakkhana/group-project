@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new UCSC\DatabaseBundle\UCSCDatabaseBundle(),
             new UCSC\RegistrationBundle\UCSCRegistrationBundle(),
+            new UCSC\SecurityBundle\UCSCSecurityBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

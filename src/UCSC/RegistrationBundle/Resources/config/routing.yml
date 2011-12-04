@@ -1,9 +1,9 @@
 student_reg:
-    pattern:  /registar
+    pattern:  /student/register
     defaults: { _controller: UCSCRegistrationBundle:Default:studentreg }
     requirements:
         _method:  POST
 
 student_form:
-    pattern:  /registar
+    pattern:  /student/register
     defaults: { _controller: UCSCRegistrationBundle:Default:studentform }

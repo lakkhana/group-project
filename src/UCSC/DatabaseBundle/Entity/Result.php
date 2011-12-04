@@ -5,7 +5,7 @@ namespace UCSC\DatabaseBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Group\TestBundle\Entity\Result
+ * UCSC\DatabaseBundle\Entity\Result
  *
  * @ORM\Table()
  * @ORM\Entity
