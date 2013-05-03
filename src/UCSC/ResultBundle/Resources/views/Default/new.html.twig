@@ -1,0 +1,29 @@
+{% extends 'UCSCResultBundle::layout.html.twig' %}
+
+{% form_theme form 'UCSCResultBundle:Form:fields.html.twig' %}
+      
+{% block body %}
+            <b><h3>Enter Subject Result</h3></b>
+<body bgcolor="green">
+<form action="{{ path(' ',{'count':count}) }}" method="post" {{ form_enctype(form) }}>
+	<table border="1">  
+	<tr>
+	<th>Register No</th>	
+	<th>Result</th>
+	
+	</tr>
+	 
+	{% for rec in form.results %}
+		 
+		<tr>
+		<td>{{ form_row(rec.student.regNo) }}</td>		
+		<td>{{ form_row(rec.score) }}</td>
+		{{ form_rest(form) }}
+		</tr>
+	
+	{% endfor %}
+	</table>
+	
+    <input type="submit" />
+</form>
+</body>{% endblock %}

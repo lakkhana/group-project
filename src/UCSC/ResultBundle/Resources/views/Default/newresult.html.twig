@@ -1,0 +1,38 @@
+{% extends 'UCSCResultBundle::layout.html.twig' %}
+
+
+      
+{% block body %}
+            <b><h3>Enter Subject Result</h3></b>
+<body bgcolor="green">
+
+	<table border="1">  
+	<tr>
+	<th>Register No</th>
+	{% if is_granted('ROLE_ADMIN') %}
+	<th>papper</th>
+	<th>Assignment</th>
+	<th>Score</th>
+	{% endif %}
+	<th>Grade</th>
+    </tr>
+	 
+	{% for rec in results %}
+		 
+		<tr>
+		<td>{{ rec.student.regNo }}</td>
+		{% if is_granted('ROLE_ADMIN') %}				
+		<td>{{ rec.papper }}</td>		
+		<td>{{ rec.assignment }}</td>	
+		<td>{{ rec.score }}</td>
+		{% endif %}	
+		<td>{{ rec.grade }}</td>		
+		
+		
+		</tr>
+	
+	{% endfor %}
+	</table>
+	
+</body>
+{% endblock %}

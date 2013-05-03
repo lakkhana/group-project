@@ -1,0 +1,54 @@
+{% extends '::base.html.twig' %}
+    
+{% block sidebar %}
+
+<script>
+	$(function() {
+		$( "#accordion" ).accordion();
+	});
+	</script>
+<div class="demo" >
+
+<div id="accordion" style="color:#0000FF">
+
+	<h5><a href="#" style="color:#A52A2A">Year 01 Subject</a></h5>
+	<div style="color:#00FFFF">
+{% for article1 in articles1 %}
+
+    <a href="{{ path('upde',{'number':article1.courseID}) }}">
+    <div style="color:#0000FF">  {{ article1.courseID}} {{ article1.name }} </div>
+    </a><br>
+{% endfor %} 
+	</div>
+	
+	
+	<h5><a href="#" style="color:#A52A2A">Year 02 Subject</a></h5>
+	<div style="color:#00FF00">
+		{% for article2 in articles2 %}
+    <a href="{{ path('upde',{'number':article2.courseID}) }}">
+     <div style="color:#0000FF"> {{ article2.courseID}} {{ article2.name }} </div>
+    </a><br>
+{% endfor %}
+	</div>
+	<h5><a href="#" style="color:#A52A2A">Year 03 Subject</a></h5>
+	<div style="color:#00FF00"> 
+		{% for article3 in articles3 %}
+    <a href="{{ path('upde',{'number':article3.courseID}) }}">
+     <div style="color:#0000FF"> {{ article3.courseID}} {{ article3.name }} </div>
+    </a><br>
+{% endfor %}
+		
+	</div>
+	<h5><a href="#" style="color:#A52A2A">Year 04 Subject</a></h5>
+	<div style="color:#00FFFF">
+		{% for article4 in articles4 %}
+    <a href="{{ path('upde',{'number':article4.courseID}) }}">
+     <div style="color:#0000FF"> {{ article4.courseID}} {{ article4.name }} </div>
+    </a><br>
+{% endfor %}
+	</div>
+</div>
+</div>
+
+{% endblock %}
+

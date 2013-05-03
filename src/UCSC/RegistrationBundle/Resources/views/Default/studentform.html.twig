@@ -1,0 +1,173 @@
+{% extends 'UCSCRegistrationBundle::layout.html.twig' %}
+
+
+{% block title %}Student Registration{% endblock %}
+
+{% block scripts %}
+
+<script type="text/javascript">
+<!--
+
+$(document).ready(function(){
+	$('#student_regNo').change(function() {
+	
+		var reg = $(this).val();
+		if(reg.length!=9 && reg.length!=10) {
+	
+			$(this).css("background-color","red");
+			alert("Registation no is invalid Value! eg:2009cs012 or 2009ict231");
+			
+		}
+		else {
+			$(this).css("background-color","white");
+		}
+		
+	});
+
+////////////////////////////       ///////////////////////////////////
+
+	$('#student_name').change(function() {
+		
+		var nam = $(this).val();
+		if(nam.length==0) {
+	
+			$(this).css("background-color","red");
+			 alert("Name must be filled out");
+			  
+			
+	
+		}
+		else {name
+			$(this).css("background-color","white");
+		}
+		
+	});
+	
+///////////////////////////    ////////////////////////////////////////////////
+
+
+$('#student_batch').change(function() {
+		
+		var nam = $(this).val();
+		if(nam.length==0) {
+	
+			$(this).css("background-color","red");
+			 alert("Batch must be filled out");
+			  
+			
+	
+		}
+		else {
+			$(this).css("background-color","white");
+		}
+		
+	});
+
+$('#student_nic').change(function() {
+	
+	var nam = $(this).val();
+	if(nam.length!=10) {
+
+		$(this).css("background-color","red");
+		 alert("ID number must be filled out");
+		  
+		
+
+	}
+	else {
+		$(this).css("background-color","white");
+	}
+	
+});
+
+
+$('#student_address').change(function() {
+	
+	var nam = $(this).val();
+	if(nam.length==0) {
+
+		$(this).css("background-color","red");
+		 alert("address must be filled out");
+		  
+		
+
+	}
+	else {
+		$(this).css("background-color","white");
+	}
+	
+});
+
+
+
+
+
+$('#student_phone').change(function() {
+	
+	var nam = $(this).val();
+	if(nam.length==0) {
+
+		$(this).css("background-color","red");
+		 alert("phone must be filled out");
+		  
+		
+
+	}
+	else {
+		$(this).css("background-color","white");
+	}
+	
+});
+
+
+
+
+$('#student_email').change(function() {
+	
+	var nam = $(this).val();
+	if(nam.length==0) {
+
+		$(this).css("background-color","red");
+		 alert("email must be filled out");
+		  
+		
+
+	}
+	else {
+		$(this).css("background-color","white");
+	}
+	
+});
+
+
+
+	
+});
+
+
+
+//-->
+</script>
+
+<script type="text/javascript">
+<!--
+$(function(){
+$('#student_bday').datetimepicker({
+	inline: true,
+	dateFormat: 'yy-mm-dd'
+});
+});
+//-->
+</script>
+
+{% endblock %}
+
+{% block body %}
+
+
+	<form action="{{ path('student_reg') }}" method="post" {{ form_enctype(form) }}>
+	    {{ form_widget(form) }}
+	
+	    <input type="submit" />
+	</form>
+{% endblock %}

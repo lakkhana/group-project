@@ -1,0 +1,39 @@
+{% extends 'UCSCRegistrationBundle::layout.html.twig' %}
+
+
+{% block title %}Course List{% endblock %}
+
+
+{% block content %}
+
+<table>  
+	<tr>
+		<th>Course ID</th> 
+		<th>Course Name</th>
+		<th>Credit</th>
+		<th>Degree</th>
+		<th>Year</th>
+		<th>Semester</th>	 
+		{% if(is_granted('ROLE_ADMIN')) %}
+     	<th></th>
+	 	{% endif %}
+	</tr>
+		 
+	{% for course in courses %}
+		<tr>
+			<td>{{ course.courseID }}</td>
+			<td>{{ course.name}}</td>
+			<td>{{ course.credit }}</td>
+			<td>{{ course.degree }}</td>
+			<td>{{ course.year }}</td>
+			<td>{{ course.sem }}</td>
+			{% if(is_granted('ROLE_ADMIN')) %}
+     		<td><a href="{{ path('update_course_form',{'cid':course.courseID}) }}">edit</a></td>
+			{% endif %}
+		</tr>
+	{% endfor %}
+	
+	
+</table>
+	
+{% endblock %}

@@ -1,0 +1,7 @@
+parameters:
+#    ucsc_time_table.example.class: UCSC\TimeTableBundle\Example
+
+services:
+#    ucsc_time_table.example:
+#        class: %ucsc_time_table.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

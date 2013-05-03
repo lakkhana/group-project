@@ -1,0 +1,154 @@
+
+# Register Student for Mahapola
+
+regMahapola:
+    pattern:  /register/Mahapola
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:regMahapola }
+    requirements:
+        _method:  POST
+
+
+regMahapola_select:
+    pattern:  /registerMahapola
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:regMahapolaselect }
+    requirements:
+        _method:  POST
+    
+regMahapola_form:
+    pattern:  /registerMahapola
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:regMahapolaform }
+
+# Register Student for Bursary
+
+regBursary:
+    pattern:  /register/Bursary
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:regBursary }
+    requirements:
+        _method:  POST
+
+
+regBursary_select:
+    pattern:  /registerBursary
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:regBursaryselect }
+    requirements:
+        _method:  POST
+    
+regBursary_form:
+    pattern:  /registerBursary
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:regBursaryform }
+
+# Enter Mahapola Payment
+payMahapola:
+    pattern:  /pay/Mahapola
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:payMahapola }
+    requirements:
+        _method:  POST
+payMahapola_select:
+    pattern:  /payMahapolaselect
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:payMahapolaselect }
+    requirements:
+        _method:  POST
+    
+payMahapola_form:
+    pattern:  /payMahapola
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:payMahapolaform }
+
+# Enter Bursary Payment
+payBursary:
+    pattern:  /pay/Bursary
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:payBursary }
+    requirements:
+        _method:  POST
+payBursary_select:
+    pattern:  /payBursaryselect
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:payBursaryselect }
+    requirements:
+        _method:  POST
+    
+payBursary_form:
+    pattern:  /payBursary
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:payBursaryform }
+
+
+
+# Enter Mahapola Type
+
+MahapolaTypeReg:
+    pattern:  /register/MahapolaType
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:MahapolaTypereg }
+    requirements:
+        _method:  POST  
+
+MahapolaTypeform:
+    pattern: /register/MahapolaType
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:MahapolaTypeform }
+
+# Enter Bursary Type
+    
+BursaryTypeReg:
+    pattern:  /register/BursaryType
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:BursaryTypereg }
+    requirements:
+        _method:  POST  
+
+BursaryTypeform:
+    pattern:  /register/BursaryType
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:BursaryTypeform }  
+
+# Update Mahapola Type
+    
+update_MahapolaType_reg:
+    pattern:  /update/MahapolaType
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:updateMahapolaType }
+    requirements:
+        _method:  POST
+
+updateMahapolaType_reg:
+    pattern:  /updateMahapolaType
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:editMahapolaTypereg }
+    requirements:
+        _method:  POST
+
+updateMahapolaType_form:
+    pattern:  /updateMahapolaType
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:editMahapolaTypeform }  
+
+# Update Bursary Type
+
+update_BursaryType_reg:
+    pattern:  /update/BursaryType
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:updateBursaryType }
+    requirements:
+        _method:  POST
+
+updateBursaryType_reg:
+    pattern:  /updateBursaryType
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:editBursaryTypereg }
+    requirements:
+        _method:  POST
+
+updateBursaryType_form:
+    pattern:  /updateBursaryType
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:editBursaryTypeform }  
+    
+# View Mahapola Details
+viewmahapola:
+    pattern:  /view/mahapola
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:view }
+    requirements:
+        _method:  POST
+viewmahapoladetails:
+    pattern:  /view/mahapoladetails
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:viewform }
+# View Bursary Details
+viewbursaryinfo:
+    pattern:  /view/bursary
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:viewbursary }
+    requirements:
+        _method:  POST
+viewbursarydetails:
+    pattern:  /view/bursarydetails
+    defaults: { _controller: UCSCScholarshipBundle:Scholar:viewbursaryform }
+
+
+   

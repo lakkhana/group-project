@@ -1,0 +1,87 @@
+{% extends 'UCSCRegistrationBundle::layout.html.twig' %}
+
+
+{% block title %}Course Registration{% endblock %}
+
+{% block body %}
+
+
+
+
+	<script type="text/javascript">
+<!--
+
+$(document).ready(function(){
+	
+
+	$('#course_courseID').change(function() {
+		
+		var nam = $(this).val();
+		if(nam.length>11 || nam.length<5) {
+
+			$(this).css("background-color","red");
+			 alert("Course ID no must be filled out");
+			  
+			
+
+		}
+		else {
+			$(this).css("background-color","white");
+		}
+		
+	});
+
+$('#course_name').change(function() {
+		
+		var nam = $(this).val();
+		if(nam.length>30 || nam.length<1) {
+
+			$(this).css("background-color","red");
+			 alert("Name  must be filled out");
+			  
+			
+
+		}
+		else {
+			$(this).css("background-color","white");
+		}
+		
+	});
+	
+
+
+
+$('#course_credit').change(function() {
+	
+	var nam = $(this).val();
+	if(nam.length!=1) {
+
+		$(this).css("background-color","red");
+		 alert("credit must be filled out");
+		  
+		
+
+	}
+	else {
+		$(this).css("background-color","white");
+	}
+	
+});
+	
+
+
+	
+
+
+});
+//-->
+</script>
+	
+
+
+<form action="{{ path('course_reg') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+
+    <input type="submit" />
+</form>
+{% endblock %}

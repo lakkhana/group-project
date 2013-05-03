@@ -1,0 +1,38 @@
+
+<script>
+	$(function() {
+		$( "#accordion" ).accordion();
+	});
+</script>
+<div class="demo" >
+
+<div id="accordion" style="color:#0000FF">
+	<h5><a href="#" style="color:#A52A2A">CS 3<sup>rd</sup> year</a></h5>
+	<div>
+	{% for list in data['CS'][3] %}
+		<a href="{{ path('op_course_form',{'sid':list.regNo,'year':3,'did':'CS','aid':aid}) }}">{{ list.regNo}}</a><br>
+	{% endfor %}
+	</div>
+	<h5><a href="#" style="color:#A52A2A">CS 4<sup>th</sup> year</a></h5>
+	<div>
+	{% for list in data['CS'][4] %}
+	    <a href="{{ path('op_course_form',{'sid':list.regNo,'year':4,'did':'CS','aid':aid}) }}">{{ list.regNo}}</a><br>
+	{% endfor %}
+	</div>
+	
+	<h5><a href="#" style="color:#A52A2A">ICT 3<sup>rd</sup> year</a></h5>
+	<div>
+	{% for list in data['ICT'][3] %}
+		<a href="{{ path('op_course_form',{'sid':list.regNo,'year':3,'did':'ICT','aid':aid}) }}">{{ list.regNo}}</a><br>
+	{% endfor %}
+	</div>
+	<h5><a href="#" style="color:#A52A2A">ICT 4<sup>th</sup> year</a></h5>
+	<div>
+	{% for list in data['ICT'][4] %}
+	    <a href="{{ path('op_course_form',{'sid':list.regNo,'year':4,'did':'ICT','aid':aid}) }}">{{ list.regNo}}</a><br>
+	{% endfor %}
+	</div>
+	
+</div>
+</div>
+

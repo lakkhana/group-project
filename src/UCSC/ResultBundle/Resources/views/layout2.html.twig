@@ -1,0 +1,19 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Results{% endblock %}
+
+{% block sidebar %}
+{% render "UCSCResultBundle:Selection:studentList"%}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<div class="result">
+{% block body %}
+{% endblock %}
+</div>
+
+{% endblock %}

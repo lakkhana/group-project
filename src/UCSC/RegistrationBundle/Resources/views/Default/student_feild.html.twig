@@ -1,0 +1,29 @@
+
+<body>
+
+	<table border="1">  
+	<tr>
+	 <th>Registration No</th>
+	 <th>Student Name</th>
+	
+	</tr>
+	 
+	{% for std in students %}
+		 
+		<tr>
+		<td>{{ std.regNo }}</td>
+		<td>{{ std.name }}</td>
+		
+		</tr>
+	{% endfor %}
+	
+	
+	
+	
+	</table>
+	
+	
+	
+	
+    
+</body><td>

@@ -1,0 +1,7 @@
+parameters:
+#    ucsc_main.example.class: UCSC\MainBundle\Example
+
+services:
+#    ucsc_main.example:
+#        class: %ucsc_main.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

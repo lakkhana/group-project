@@ -1,0 +1,9 @@
+services:
+     event_calendar:
+        class:        UCSC\EventCalendarBundle\GCalendar
+        arguments:    [groupprojectucsc@gmail.com , ucsc2009]
+
+
+#    ucsc_event_calendar.example:
+#        class: %ucsc_event_calendar.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

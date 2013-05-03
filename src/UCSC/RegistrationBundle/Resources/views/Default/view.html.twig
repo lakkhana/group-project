@@ -1,0 +1,50 @@
+{% extends 'UCSCRegistrationBundle::layout.html.twig' %}
+
+
+{% block title %}
+{%  if(degree=="ICT" )%}
+Bachelor Of Information And Communication Technology Students
+{% endif %}
+
+{%  if(degree=="CS" )%}
+Bachelor Of Computer Science Students
+{% endif %}
+
+{%  if(degree=="both" )%}
+All Students
+{% endif %}
+{% endblock %}
+
+{% block body %}
+
+
+	<table width="400px">  
+	<tr>
+	 <th>Registration No</th> 
+	 <th>Batch Year</th>
+	 <th width="150px">Student Name</th>
+	 {% if(is_granted('ROLE_ADMIN')) %}
+     <th></th>
+	 {% endif %}
+	</tr>
+	 
+	{% for std in students %}
+		 
+		<tr>
+		<td>{{ std.regNo }}</td>
+		<td>{{ std.batch }}</td>
+		<td>{{ std.name }}</td>
+		{% if(is_granted('ROLE_ADMIN')) %}
+		<td><a href="{{ path('update_reg',{'id':std.regNo}) }}">edit</a></td>
+		{% endif %}
+		</tr>
+	{% endfor %}
+	
+	
+	
+	
+	</table>
+	
+	
+	
+{% endblock %}

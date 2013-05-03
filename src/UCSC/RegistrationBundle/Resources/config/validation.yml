@@ -1,0 +1,58 @@
+UCSC\DatabaseBundle\Entity\Student:
+    properties:
+        regNo:
+              - MinLength: { limit: 9, message :<br/><br/><br/><br/><br/><br/><b><i><font size="5" face="arial" color="red"> error@ Registation no->invalid Value! eg:2009cs012 or 2009ict231 </font></b></i><br/><br/><br/> }
+              - MaxLength: { limit: 10, message :<br/><br/><br/> <br/><br/><br/><b><i><font size="5" face="arial" color="red">error@ Registation no>invalid Value! eg:2009cs012 or 2009ict231</font></b></i><br/><br/><br/> }
+      
+        name:
+            - MinLength: { limit: 1, message :<br/><br/><br/><br/><br/><br/><b><i><font size="5" face="arial" color="red"> error@ Name->invalid Value! </font></b></i><br/><br/><br/> }
+            - MaxLength: { limit: 100, message :<br/><br/><br/> <br/><br/><br/><b><i><font size="12" face="arial" color="red">error@ Name->invalid Value! </font></b></i><br/><br/><br/> }
+        
+        nic:
+            - MinLength: { limit: 10, message : <br/><br/><br/><br/><br/><br/><b><i><font size="5" face="arial" color="red">error@ NIC.no->invalid Value enter! eg:881511092v </font></b></i><br/><br/><br/> }
+            - MaxLength: { limit: 10, message : <br/><br/><br/><br/><br/><br/><b><i><font size="5" face="arial" color="red">error@ NIC.no->invalid Value enter ! eg:881511092v </font></b></i><br/><br/><br/>}
+  
+            
+        address:
+            - MinLength: 1
+          
+        phone:
+            - MinLength: { limit: 9, message : <br/><br/><br/><br/><br/><br/><b><i><font size="5" face="arial" color="red">error@ Phone no.->invalid Value enter! eg:0712383830 </font></b></i><br/><br/><br/>}
+            - MaxLength: { limit: 10, message : <br/><br/><br/><br/><br/><br/><b><i><font size="5" face="arial" color="red">error@ Phone no.->invalid Value! eg:0712383830 </font></b></i><br/><br/><br/> }
+            
+            
+UCSC\DatabaseBundle\Entity\Lecture:
+    properties:
+        lectureID:
+              - MinLength: 3
+              - MaxLength: 10
+      
+        name:
+            - MinLength: 3
+        phoneNo:
+            - MinLength: 9
+            - MaxLength: 10
+          
+            
+        address:
+            - MinLength: 3
+          
+                      
+  
+  
+UCSC\DatabaseBundle\Entity\Course:
+    properties:
+        courseID:
+              - MinLength: { limit: 2, message :<br/><br/><br/><br/><br/><br/><b><i><font size="5" face="arial" color="red"> error@ Course Id->invalid Value! eg:SCS2002 or ICT/CS3002 </font></b></i><br/><br/><br/> }
+              - MaxLength: { limit: 10, message :<br/><br/><br/> <br/><br/><br/><b><i><font size="5" face="arial" color="red">error@ Course Id>invalid Value! eg:SCS2002 or ICT/CS3002</font></b></i><br/><br/><br/> }
+      
+        name:
+            - MinLength: { limit: 2, message :<br/><br/><br/><br/><br/><br/><b><i><font size="5" face="arial" color="red"> error@ Course Name->invalid Value! </font></b></i><br/><br/><br/> }
+            - MaxLength: { limit: 100, message :<br/><br/><br/> <br/><br/><br/><b><i><font size="12" face="arial" color="red">error@ Course Name->invalid Value! </font></b></i><br/><br/><br/> }
+        
+        credit:
+            - Min: { limit: 0, message : <br/><br/><br/><br/><br/><br/><b><i><font size="5" face="arial" color="red">error@ Credit.->invalid Value enter! eg:2 </font></b></i><br/><br/><br/>}
+            - Max: { limit: 5, message : <br/><br/><br/><br/><br/><br/><b><i><font size="5" face="arial" color="red">error@ Credit.->invalid Value! eg:3 </font></b></i><br/><br/><br/> }
+           
+            
+       

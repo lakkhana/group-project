@@ -1,0 +1,12 @@
+{% extends 'UCSCRegistrationBundle::layout.html.twig' %}
+
+
+{% block title %}View Course{% endblock %}
+
+{% block body %}
+<form action="{{ path('view3') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+
+    <input type="submit" />
+</form>
+{% endblock %}

@@ -1,0 +1,24 @@
+    {% extends 'UCSCResultBundle::layout.html.twig' %}      
+{% block body %}
+    
+<body bgcolor="green">
+<form action="{{ path('resultview') }}" method="post" {{ form_enctype(form) }}>
+	<table border="1">  
+	<tr>
+	<th>Student Name</th>
+	<th>Result</th>
+	</tr>
+	 
+	{% for rec in form.results %}
+		 
+		<tr>
+		<td>3</td>
+		<td>{{ form_widget(rec.score) }}</td>
+		</tr>
+	
+	{% endfor %}
+	</table>
+	{{ form_rest(form) }}
+   
+</form>
+</body>{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'UCSCRegistrationBundle::layout.html.twig' %}
+
+
+{% block title %}Calendar : Add Event{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+<!--
+$(function(){
+$('#event_startdate').datetimepicker({
+	inline: true,
+	dateFormat: 'yy-mm-dd'
+});
+$('#event_enddate').datetimepicker({
+	inline: true,
+	dateFormat: 'yy-mm-dd'
+});
+});
+//-->
+</script>
+
+{% endblock %}
+
+{% block body %}
+
+{% if type %}
+	{% include 'UCSCEventCalendarBundle:Default:notifications.html.twig' with {'type': type, 'msg': msg} %}
+{% endif %}
+		
+<form action="{{ path('add_event') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+
+    <input type="submit" />
+</form>
+{% endblock %}

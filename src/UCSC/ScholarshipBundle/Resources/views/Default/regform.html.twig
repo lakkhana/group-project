@@ -1,0 +1,12 @@
+{% extends 'UCSCScholarshipBundle::layout.html.twig' %}
+
+
+{% block title %}Scholarship Registration{% endblock %}
+
+{% block body %}
+	<form action="{{ path('ScholarshipReg') }}" method="post" {{ form_enctype(form) }}>
+	    {{ form_widget(form) }}
+	
+	    <input type="submit" />
+	</form>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'UCSCTimeTableBundle::layout.html.twig' %}
+
+{% block title %}View Time Table{% endblock %}
+
+{% block body %}
+	<form action="{{ path('view_timetable') }}" method="post" {{ form_enctype(form) }}>
+	
+		{{ form_widget(form) }}
+		
+	    <input type="submit" />
+	</form>
+	
+	{% if method == 'post' %}
+	     <div id="view_timetable">
+	     <table border="1">
+			<tr>
+				<th>Time Slot</th>
+				<th>Monday</th>
+				<th>Tuesday</th>
+				<th>Wednesday</th>
+				<th>Thursday</th>
+				<th>Friday</th>
+			</tr>
+			{% set time_slot = table.slots %}
+			{% for i in 0..9 %}
+			<div>
+ 				<tr>
+ 					<td>
+ 					{{ cycle(['8.00AM-9.00AM', '9.00AM-10.00AM','10.00AM-11.00AM',
+					'11.00AM-12.00AM','12.00AM-1.00PM','1.00PM-2.00PM','2.00PM-3.00PM',
+					'3.00PM-4.00PM','4.00PM-5.00PM','5.00PM-6.00PM'], loop.index-1) }}
+					</td>
+				{% for j in 0..4 %}
+   					{% set id = j*10+i %}
+   					<td>
+   					<table id='time_slot'>
+	   					<tr>
+		   					<td width='65%'>{{ time_slot[id].ayearcourse }}</td>
+		   					<td>{{ time_slot[id].type }}</td>
+	   					</tr>
+	   					<tr>
+		   					<td>{{ time_slot[id].hall }}</td>
+		   					<td>{{ lec[id] }}</td>
+	   					</tr>
+   					</table>
+   					</td>
+				{% endfor %}
+				</tr>
+ 			</div>
+			{% endfor %}			
+		</table>
+		</div>
+		
+	<a href="{{ path('homepage') }}">Return Home Page</a> 
+	
+	
+	</form>
+	
+	{% endif %}
+{% endblock %}

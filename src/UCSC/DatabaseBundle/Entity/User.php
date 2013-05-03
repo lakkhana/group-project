@@ -144,7 +144,7 @@ class User implements UserInterface
      */
     public function getRole()
     {
-        return $this->userRoles;
+        return $this->role;
     }
     
     /**
@@ -195,4 +195,14 @@ class User implements UserInterface
     }
  
 
+
+    /**
+     * Set createdAt
+     *
+     * @param date $createdAt
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+    }
 }

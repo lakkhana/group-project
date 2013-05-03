@@ -1,0 +1,108 @@
+new_academic_year:
+    pattern:  /results/academic_year
+    defaults: { _controller: UCSCResultBundle:Selection:newAcademicYear} 
+
+op_course:
+    pattern:  /results/select
+    defaults: { _controller: UCSCResultBundle:Selection:opCourse} 
+
+op_course_select:
+    pattern:  /results/select/{count}
+    defaults: { _controller: UCSCResultBundle:Selection:opCourseSelect } 
+    requirements:
+        _method:  POST
+
+op_course_form:
+    pattern:  /results/select/{sid}/{year}/{did}/{aid}
+    defaults: { _controller: UCSCResultBundle:Selection:opCourseForm, year: 3, did: CS, aid: 1 } 
+
+enrole_course_select:
+    pattern:  /results/enrole/courses/{count}
+    defaults: { _controller: UCSCResultBundle:Selection:addCourses } 
+    requirements:
+        _method:  POST
+
+enrole_course_form:
+    pattern:  /results/enrole/courses
+    defaults: { _controller: UCSCResultBundle:Selection:addCoursesForm } 
+
+
+results:
+    pattern:  /results/view
+    defaults: { _controller: UCSCResultBundle:Result:view }
+getcourselist:
+    pattern:  /results/view/getcourselist
+    defaults: { _controller: UCSCResultBundle:Result:getcourselist }
+getstudentlist:
+    pattern:  /results/view/getcourselist/getstudentlist
+    defaults: { _controller: UCSCResultBundle:Result:getstudentlist }
+resultupdate:
+    pattern:  /results/view/resultupdate/{count}
+    defaults: { _controller: UCSCResultBundle:Result:resultupdate }
+resultconform:
+    pattern:  /results/view/resultupdate/resultconform
+    defaults: { _controller: UCSCResultBundle:Result:resultconform }   
+    
+rview:
+    pattern:  /results/rview
+    defaults: { _controller: UCSCResultBundle:Result:rview }
+resultview:
+    pattern:  /results/rview/resultview
+    defaults: { _controller: UCSCResultBundle:Result:resultview }
+getstudentresult:
+    pattern:  /results/rview/getstudentresult
+    defaults: { _controller: UCSCResultBundle:Result:getstudentresult }
+
+
+conformview:
+    pattern:  /results/conformview
+    defaults: { _controller: UCSCResultBundle:Result:conformview }
+com:
+    pattern:  /results/conformview/com/{number}
+    defaults: { _controller: UCSCResultBundle:Result:com }
+resultconform:
+    pattern:  /results/conformview/resultconform
+    defaults: { _controller: UCSCResultBundle:Result:resultconform } 
+
+
+scenrolview:
+    pattern:  /results/scenrolview
+    defaults: { _controller: UCSCResultBundle:Result:scenrolview }
+enrolcourseview:
+    pattern:  /results/scenrolview/enrolcourseview
+    defaults: { _controller: UCSCResultBundle:Result:enrolcourseview }
+
+clist:
+    pattern:  /clist
+    defaults: { _controller: UCSCResultBundle:Result:clist }
+
+recentArticles:
+    pattern:  /recentArticles
+    defaults: { _controller: UCSCResultBundle:Result:recentArticles }
+
+selectStudent:
+    pattern:  /selectStudent/{number}
+    defaults: { _controller: UCSCResultBundle:Result:selectStudent } 
+
+courseselect:
+    pattern:  /courseselect
+    defaults: { _controller: UCSCResultBundle:Result:courseselect }
+upde:
+    pattern:  /courseselect/upde/{number}
+    defaults: { _controller: UCSCResultBundle:Result:upde }  
+enterresult:
+    pattern:  /enterresult/upde
+    defaults: { _controller: UCSCResultBundle:Result:enterresult } 
+resup:
+    pattern:  /enterresult/upde/resup/{count}
+    defaults: { _controller: UCSCResultBundle:Result:resup }    
+          
+rupdate:
+    pattern:  /results/rupdate
+    defaults: { _controller: UCSCResultBundle:Result:rupdate }
+resultupdete1:
+    pattern:  /results/rupdate/resultupdete1
+    defaults: { _controller: UCSCResultBundle:Result:resultupdete1 }
+rupdefinal:
+    pattern:  /results/rupdate/rupdefinal
+    defaults: { _controller: UCSCResultBundle:Result:rupdefinal } 

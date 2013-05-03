@@ -1,0 +1,30 @@
+{% extends 'UCSCScholarshipBundle::layout.html.twig' %}
+
+
+{% block title %}Bursary Payment{% endblock %}
+
+{% block scripts %}
+	<script type="text/javascript">
+	<!--
+	$(document).ready(function(){
+		
+		$.post("{{ path('payBursary_select') }}", {regno : $('#form_sregno').val()}, function(data) {
+			  $('#std').html(data);
+		});
+		
+		$('#form_sregno').change(function(){
+			
+			$.post("{{ path('payBursary_select') }}", {regno : $(this).val()}, function(data) {
+				  $('#std').html(data);
+			});
+		});
+	});
+	//-->
+	</script>
+{% endblock %}
+
+{% block body %}
+	{{ form_widget(form) }}
+
+	<div id="std"></div>
+{% endblock %}

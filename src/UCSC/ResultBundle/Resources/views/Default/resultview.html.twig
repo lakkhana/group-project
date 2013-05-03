@@ -1,0 +1,24 @@
+    {% extends 'UCSCResultBundle::layout.html.twig' %}   
+    
+    
+    
+       
+{% block body %}
+          
+<body bgcolor="green">
+	<table border="1">  
+	<tr>
+	<th>Student RegNO</th>
+	<th>Result</th>
+	</tr>
+	 
+	{% for rec in results %}
+		 
+		<tr>
+		<td>{{ rec.regNo }}</td>
+		<td>{{ rec.score }}</td>
+		</tr>
+	
+	{% endfor %}
+	</table>
+</body>{% endblock %}

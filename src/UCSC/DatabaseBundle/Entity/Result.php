@@ -12,51 +12,88 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Result
 {
-    /**
-     * @var integer $id
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    protected $id;
 
+    /**
+     * @var boolean $conform
+     *
+     * @ORM\Column(name="conform", type="boolean", nullable=true)
+     */
+    protected $conform;
     /**
      * @var integer $score
      *
-     * @ORM\Column(name="score", type="integer")
+     * @ORM\Column(name="score", type="integer", nullable=true)
      */
     protected $score;
-
+    
     /**
-     * @var smallint $term
+     * @var integer $papper
      *
-     * @ORM\Column(name="term", type="smallint")
+     * @ORM\Column(name="papper", type="integer", nullable=true)
      */
-    protected $term;
+    protected $papper;
+    
+    /**
+     * @var integer $assignment
+     *
+     * @ORM\Column(name="assignment", type="integer", nullable=true)
+     */
+    protected $assignment;
 
+    
+    /**
+     * @var string $grade
+     *
+     * @ORM\Column(name="grade", type="string", length=2, nullable=true)
+     */
+    protected $grade;
+    
+    /**
+     * @var string $hashval
+     *
+     * @ORM\Column(name="hashval", type="string", nullable=true)
+     */
+    protected $hashval;
+    /**
+     * @var string $time
+     *
+     * @ORM\Column(name="time", type="string", nullable=true)
+     */
+    protected $time;
 
     /**
      * @ORM\ManyToOne(targetEntity="Student", inversedBy="results")
+     * @ORM\Id
      * @ORM\JoinColumn(name="studentID", referencedColumnName="regNo")
      */
-    protected $studentID;
+    protected $student;
     
-        /**
-     * @ORM\ManyToOne(targetEntity="Course", inversedBy="results")
-     * @ORM\JoinColumn(name="courseID", referencedColumnName="courseID")
+    /**
+     * @ORM\ManyToOne(targetEntity="AyearCourse", inversedBy="results")
+     * @ORM\Id
+     * @ORM\JoinColumn(name="acid", referencedColumnName="acid")
      */
-    protected $courseID;
+    protected $ayearcourse;
     
 
     /**
-     * Get id
+     * Set conform
      *
-     * @return integer 
+     * @param boolean $conform
      */
-    public function getId()
+    public function setConform($conform)
     {
-        return $this->id;
+        $this->conform = $conform;
+    }
+
+    /**
+     * Get conform
+     *
+     * @return boolean 
+     */
+    public function getConform()
+    {
+        return $this->conform;
     }
 
     /**
@@ -80,62 +117,142 @@ class Result
     }
 
     /**
-     * Set term
+     * Set papper
      *
-     * @param smallint $term
+     * @param integer $papper
      */
-    public function setTerm($term)
+    public function setPapper($papper)
     {
-        $this->term = $term;
+        $this->papper = $papper;
     }
 
     /**
-     * Get term
+     * Get papper
      *
-     * @return smallint 
+     * @return integer 
      */
-    public function getTerm()
+    public function getPapper()
     {
-        return $this->term;
+        return $this->papper;
     }
 
     /**
-     * Set studentID
+     * Set assignment
      *
-     * @param UCSC\DatabaseBundle\Entity\Student $studentID
+     * @param integer $assignment
      */
-    public function setStudentID(\UCSC\DatabaseBundle\Entity\Student $studentID)
+    public function setAssignment($assignment)
     {
-        $this->studentID = $studentID;
+        $this->assignment = $assignment;
     }
 
     /**
-     * Get studentID
+     * Get assignment
+     *
+     * @return integer 
+     */
+    public function getAssignment()
+    {
+        return $this->assignment;
+    }
+
+    /**
+     * Set grade
+     *
+     * @param string $grade
+     */
+    public function setGrade($grade)
+    {
+        $this->grade = $grade;
+    }
+
+    /**
+     * Get grade
+     *
+     * @return string 
+     */
+    public function getGrade()
+    {
+        return $this->grade;
+    }
+
+    /**
+     * Set hashval
+     *
+     * @param string $hashval
+     */
+    public function setHashval($hashval)
+    {
+        $this->hashval = $hashval;
+    }
+
+    /**
+     * Get hashval
+     *
+     * @return string 
+     */
+    public function getHashval()
+    {
+        return $this->hashval;
+    }
+
+    /**
+     * Set time
+     *
+     * @param string $time
+     */
+    public function setTime($time)
+    {
+        $this->time = $time;
+    }
+
+    /**
+     * Get time
+     *
+     * @return string 
+     */
+    public function getTime()
+    {
+        return $this->time;
+    }
+
+    /**
+     * Set student
+     *
+     * @param UCSC\DatabaseBundle\Entity\Student $student
+     */
+    public function setStudent(\UCSC\DatabaseBundle\Entity\Student $student)
+    {
+        $this->student = $student;
+    }
+
+    /**
+     * Get student
      *
      * @return UCSC\DatabaseBundle\Entity\Student 
      */
-    public function getStudentID()
+    public function getStudent()
     {
-        return $this->studentID;
+        return $this->student;
     }
 
     /**
-     * Set courseID
+     * Set ayearcourse
      *
-     * @param UCSC\DatabaseBundle\Entity\Course $courseID
+     * @param UCSC\DatabaseBundle\Entity\AyearCourse $ayearcourse
      */
-    public function setCourseID(\UCSC\DatabaseBundle\Entity\Course $courseID)
+    public function setAyearcourse(\UCSC\DatabaseBundle\Entity\AyearCourse $ayearcourse)
     {
-        $this->courseID = $courseID;
+        $this->ayearcourse = $ayearcourse;
     }
 
     /**
-     * Get courseID
+     * Get ayearcourse
      *
-     * @return UCSC\DatabaseBundle\Entity\Course 
+     * @return UCSC\DatabaseBundle\Entity\AyearCourse 
      */
-    public function getCourseID()
+    public function getAyearcourse()
     {
-        return $this->courseID;
+        return $this->ayearcourse;
     }
 }

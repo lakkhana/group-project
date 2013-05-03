@@ -1,0 +1,33 @@
+{% extends 'UCSCResultBundle::layout2.html.twig' %}
+{% form_theme form 'UCSCResultBundle:Form:fields.html.twig' %}
+{% block title %}
+{{ sid }}
+{% endblock %}     
+{% block body %}
+    
+<body bgcolor="green">
+<form action="{{ path('op_course_select',{'sid':sid,'count':count}) }}" method="post" {{ form_enctype(form) }}>
+	
+	<table border="1">
+		<tr>
+			<th>Selected</th>
+			<th>Course ID</th>
+			<th>Course Name</th>
+		</tr>
+		{% for course in form.courses %}
+		<div>
+ 			<tr>
+   				<td>{{ form_row(course.selected) }}</td>
+   				<td>{{ form_row(course.courseid) }}</td>
+   				<td>{{ form_row(course.coursename) }}</td>
+			</tr>
+ 		</div>
+ 		{% endfor %}
+	</table>
+	<br>
+	{{ form_rest(form) }}
+	
+	<input type="submit" />
+</form>
+
+{% endblock %}

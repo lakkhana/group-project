@@ -1,0 +1,12 @@
+{% extends 'UCSCScholarshipBundle::layout.html.twig' %}
+
+
+{% block title %}Update Bursary Type{% endblock %}
+
+{% block body %}
+	<form action="{{ path('updateBursaryType_reg') }}" method="post" {{ form_enctype(form) }}>
+	    {{ form_widget(form) }}
+	
+	    <input type="submit" />
+	</form>
+{% endblock %}

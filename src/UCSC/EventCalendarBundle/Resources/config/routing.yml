@@ -1,0 +1,19 @@
+add_event:
+    pattern:  /event/add/{type}/{msg}
+    defaults: { _controller: UCSCEventCalendarBundle:Default:addEvent, type:null, msg:null }
+
+edit_event:
+    pattern:  /event/edit/{id}
+    defaults: { _controller: UCSCEventCalendarBundle:Default:editEvent }
+
+delete_event:
+    pattern:  /event/delete/{id}
+    defaults: { _controller: UCSCEventCalendarBundle:Default:deleteEvent }
+    
+list_events:
+    pattern:  /event/list/{type}/{msg}
+    defaults: { _controller: UCSCEventCalendarBundle:Default:list, type:null, msg:null }
+
+view_calendar:
+    pattern:  /
+    defaults: { _controller: UCSCEventCalendarBundle:Default:view }

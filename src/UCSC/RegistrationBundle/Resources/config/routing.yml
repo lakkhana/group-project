@@ -1,9 +1,122 @@
+import_csv:
+    pattern:  /import
+    defaults: { _controller: UCSCRegistrationBundle:New:import }
+    requirements:
+        _method:  POST
+
+import_csv_form:
+    pattern:  /import
+    defaults: { _controller: UCSCRegistrationBundle:New:importform }
+    
+new_batch:
+    pattern:  /register/batch
+    defaults: { _controller: UCSCRegistrationBundle:New:newBatch }
+
+
+viewcourse:
+    pattern:  /view/course
+    defaults: { _controller: UCSCRegistrationBundle:Course:view }
+    requirements:
+        _method:  POST
+
+view3:
+    pattern:  /view/course
+    defaults: { _controller: UCSCRegistrationBundle:Course:viewform }
+
+
+viewlecture:
+    pattern:  /view/lecture
+    defaults: { _controller: UCSCRegistrationBundle:Lecture:view }
+    requirements:
+        _method:  POST
+
+view2:
+    pattern:  /view/lecture
+    defaults: { _controller: UCSCRegistrationBundle:Lecture:viewform }
+
+
+viewstudent:
+    pattern:  /view/student
+    defaults: { _controller: UCSCRegistrationBundle:Student:view }
+    requirements:
+        _method:  POST
+
+view:
+    pattern:  /view/student
+    defaults: { _controller: UCSCRegistrationBundle:Student:viewform }
+
+update_course_reg:
+    pattern:  /update/course
+    defaults: { _controller: UCSCRegistrationBundle:Course:update }
+    requirements:
+        _method:  POST
+
+update_course_form:
+    pattern:  /update/course/form/{cid}
+    defaults: { _controller: UCSCRegistrationBundle:Course:updateform }
+
+update_lecture_reg:
+    pattern:  /update/lecture
+    defaults: { _controller: UCSCRegistrationBundle:Lecture:update}
+    requirements:
+        _method:  POST
+
+update_lecture_form:
+    pattern:  /update/lecture/{lid}
+    defaults: { _controller: UCSCRegistrationBundle:Lecture:updateform}
+
+update_student_reg:
+    pattern:  /update/student
+    defaults: { _controller: UCSCRegistrationBundle:Student:update }
+    requirements:
+        _method:  POST
+
+update_reg:
+    pattern:  /update/student/form/{id}
+    defaults: { _controller: UCSCRegistrationBundle:Student:updateform }
+
+update_form:
+    pattern:  /update/student/select
+    defaults: { _controller: UCSCRegistrationBundle:Student:updateselect }    
+
+lecture_reg:
+    pattern:  /register/lecture
+    defaults: { _controller: UCSCRegistrationBundle:Lecture:register }
+    requirements:
+        _method:  POST
+
+lecture_form:
+    pattern:  /register/lecture
+    defaults: { _controller: UCSCRegistrationBundle:Lecture:registerform}	
+
+course_reg:
+    pattern:  /register/course
+    defaults: { _controller: UCSCRegistrationBundle:Course:register }
+    requirements:
+        _method:  POST	
+
+course_form:
+    pattern:  /register/course
+    defaults: { _controller: UCSCRegistrationBundle:Course:registerform }	
+
 student_reg:
-    pattern:  /student/register
-    defaults: { _controller: UCSCRegistrationBundle:Default:studentreg }
+    pattern:  /register/student
+    defaults: { _controller: UCSCRegistrationBundle:Student:register }
     requirements:
         _method:  POST
 
 student_form:
-    pattern:  /student/register
-    defaults: { _controller: UCSCRegistrationBundle:Default:studentform }
+    pattern:  /register/student
+    defaults: { _controller: UCSCRegistrationBundle:Student:registerform }
+    
+yearreg_form:
+    pattern:  /yearregister/student
+    defaults: { _controller: UCSCRegistrationBundle:Student:yearRegform }
+    
+studentfeild:
+    pattern:  /view/studentlist/course/{cid}
+    defaults: { _controller: UCSCRegistrationBundle:Student:listbycourse }
+    
+studentfeild_by_name:
+    pattern:  /view/studentlist/name/{name}
+    defaults: { _controller: UCSCRegistrationBundle:Student:listbyname }

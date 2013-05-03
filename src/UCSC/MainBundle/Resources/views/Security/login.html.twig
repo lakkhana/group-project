@@ -1,0 +1,34 @@
+{% extends 'UCSCMainBundle::layout.html.twig' %}
+
+{% block title %}User Login{% endblock %}
+
+{% block body %}
+
+{% if error %}
+    <div id="error">{{ error.message }}</div>
+{% endif %}
+<div id="login_form">
+	<form action="{{ path('login_check') }}" method="post" >
+	
+	    <div style="float: left; width: 30%; height:30px;">
+	    	<label for="username">Username</label>  	
+	    </div>
+	    
+	    <div style="float: left; width: 70%; height:30px;">
+			: <input type="text" id="username" name="_username" value="{{ last_username }}" class="ui-state-default ui-corner-all"/>
+	    </div>
+	        <div style="float: left; width: 30%; height:30px;">
+	    	<label for="password">Password</label>    	   	
+	    </div>
+	    
+	    <div style="float: left; width: 70%; height:30px;">
+	    	: <input type="password" id="password" name="_password" class="ui-state-default ui-corner-all"/>
+	    </div>
+	    <div>
+	    	<input type="submit" name="login" value="Login" class="ui-state-default ui-corner-all" style="float:right;"/>
+	    </div>
+	    
+	    
+	</form>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'UCSCResultBundle::layout2.html.twig' %}
+
+{% block body %}
+<form action="{{ path('new_academic_year') }}" method="post" {{ form_enctype(form) }}>
+  
+     
+  {{ form_widget(form) }}
+  <br>
+  <input type="submit" value="Add"/>
+</form>
+
+{% endblock %}

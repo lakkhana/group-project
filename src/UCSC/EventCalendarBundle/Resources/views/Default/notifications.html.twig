@@ -1,0 +1,19 @@
+{% if type == 'note' %}
+<div class="ui-widget">
+	<div class="ui-state-highlight ui-corner-all"> 
+		<p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+		{{ msg }}
+		</p>
+	</div>
+	<br>
+</div>
+{% else %}
+<div class="ui-widget">
+	<div class="ui-state-error ui-corner-all"> 
+		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+		{{ msg }}
+		</p>
+	</div>
+	<br>
+</div>
+{% endif %}

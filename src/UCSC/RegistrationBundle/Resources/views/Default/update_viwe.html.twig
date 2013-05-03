@@ -1,0 +1,12 @@
+{% extends 'UCSCRegistrationBundle::layout.html.twig' %}
+
+
+{% block title %}Update : {{sid}}{% endblock %}
+
+{% block body %}
+<form action="{{ path('update_student_reg') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+
+    <input type="submit"  onclick="return confirm('Are you sure you want to update details?');"/>
+</form>
+{% endblock %}

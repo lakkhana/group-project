@@ -1,0 +1,29 @@
+{% extends 'UCSCScholarshipBundle::layout.html.twig' %}
+
+
+{% block title %}Mahapola Registration{% endblock %}
+
+{% block scripts %}
+	<script type="text/javascript">
+	<!--
+	$(document).ready(function(){
+
+		$.post("{{ path('regMahapola_select') }}", {batch : $('#form_batch').val()}, function(data) {
+			  $('#std').html(data);
+		});
+		
+		$('#form_batch').change(function(){
+			$.post("{{ path('regMahapola_select') }}", {batch : $(this).val()}, function(data) {
+				  $('#std').html(data);
+			});
+		});
+	});
+	//-->
+	</script>
+{% endblock %}
+
+{% block body %}
+	{{ form_widget(form) }}
+
+	<div id="std"></div>
+{% endblock %}

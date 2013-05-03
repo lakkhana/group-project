@@ -1,0 +1,12 @@
+{% extends 'UCSCResultBundle::layout.html.twig' %}
+
+{% block body %}
+<form action="{{ path('enterresult')}}" method="post" {{ form_enctype(form) }}>
+     {{ form_widget(form) }}
+     
+	{{ form_rest(form) }}
+	
+   <input type="submit" />   
+</form>
+
+{% endblock %}

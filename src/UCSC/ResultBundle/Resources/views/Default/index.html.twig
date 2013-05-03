@@ -1,0 +1,47 @@
+{% extends 'UCSCResultBundle::layout.html.twig' %}
+
+	
+{% block title %}Result{% endblock %}
+
+{% block scripts %}
+	<script type="text/javascript">
+	
+	$(document).ready(function(){
+		$.post("{{ path('clist') }}", {sem : null, degree : null}, function(data) {
+			  $('#clist').html(data);
+		});
+		
+		$('#form_Semester').keyup(function(){
+			$.post("{{ path('clist') }}", {sem : $(this).val(),degree : $('#form_Degree input:checked').val()}, function(data) {
+				  $('#clist').html(data);
+			});
+		});
+
+		$('#form_Degree').change(function(){
+			$.post("{{ path('clist') }}", {sem : $('#form_Semester').val(),degree : $('#form_Degree input:checked').val()}, function(data) {
+				  $('#clist').html(data);
+			});
+		});
+	});
+	
+	</script>
+{% endblock %}
+
+{% block body %}
+<form action="{{ path('getcourselist') }}" method="post" {{ form_enctype(form) }}>
+     
+	{{ form_widget(form) }}
+	
+    <input type="submit" />
+</form>
+<form action="{{ path('getstudentlist') }}" method="post" {{ form_enctype(form) }}>
+     
+	{{ form_widget(form) }}
+	
+    <input type="submit" />
+</form>
+	
+  <div id='clist'></div>
+<div id='test'></div>
+ 
+{% endblock %}

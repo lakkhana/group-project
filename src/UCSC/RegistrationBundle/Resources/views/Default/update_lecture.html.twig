@@ -1,0 +1,11 @@
+{% extends 'UCSCRegistrationBundle::layout.html.twig' %}
+
+{% block title %}Searching{% endblock %}
+
+{% block body %}
+<form action="{{ path('updateLecture_reg') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+
+    <input type="submit" />
+</form>
+{% endblock %}

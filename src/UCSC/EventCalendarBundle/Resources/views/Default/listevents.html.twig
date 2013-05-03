@@ -1,0 +1,22 @@
+{% extends 'UCSCRegistrationBundle::layout.html.twig' %}
+
+
+{% block title %}Calendar : Event List{% endblock %}
+
+{% block body %}
+
+{% if type %}
+	{% include 'UCSCEventCalendarBundle:Default:notifications.html.twig' with {'type': type, 'msg': msg} %}
+{% endif %}
+
+	<ul>
+	{% for event in feed %}
+		<li>
+		<h2>{{ event.title }}</h2>
+		{{ event.summary | raw}}<br>
+		<a href="{{path('edit_event',{'id': event.id})}}">edit</a> | 
+		<a href="{{path('delete_event',{'id': event.id})}}">delete</a>
+		</li>
+	{% endfor %}
+	</ul>   
+{% endblock %}

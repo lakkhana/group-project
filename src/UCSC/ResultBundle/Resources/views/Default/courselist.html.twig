@@ -1,0 +1,15 @@
+{% extends 'UCSCResultBundle::layout.html.twig' %}
+
+{% block title %}Result{% endblock %}
+	
+{% block body %}	
+	<ul>
+	{% for course in c %}
+	
+	<li>{{ course }}</li>
+	{{ result }}
+	{% else %}
+	<li>No users found</li>
+	{% endfor %}
+	</ul>
+{% endblock %}

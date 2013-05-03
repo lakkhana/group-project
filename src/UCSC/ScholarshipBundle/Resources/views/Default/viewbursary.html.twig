@@ -1,0 +1,12 @@
+{% extends 'UCSCScholarshipBundle::layout.html.twig' %}
+
+
+{% block title %}View Bursary Details{% endblock %}
+
+{% block body %}
+<form action="{{ path('viewbursaryinfo') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+
+    <input type="submit"/>
+</form>
+{% endblock %}

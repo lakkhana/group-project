@@ -1,0 +1,12 @@
+{% extends 'UCSCScholarshipBundle::layout.html.twig' %}
+
+
+{% block title %}View Mahapola Details{% endblock %}
+
+{% block body %}
+<form action="{{ path('viewmahapola') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+
+    <input type="submit"/>
+</form>
+{% endblock %}

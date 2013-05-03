@@ -1,0 +1,140 @@
+{% extends 'UCSCRegistrationBundle::layout.html.twig' %}
+
+{% block title %}Lecture Registration2{% endblock %}
+
+{% block body %}
+<form action="{{ path('lecture_reg') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+	
+	
+	<script type="text/javascript">
+<!--
+
+$(document).ready(function(){
+	
+
+	$('#lecture_lectureID').change(function() {
+		
+		var nam = $(this).val();
+		if(nam.length>13 || nam.length<3) {
+
+			$(this).css("background-color","red");
+			 alert("lectureID must be filled out");
+			  
+			
+
+		}
+		else {
+			$(this).css("background-color","white");
+		}
+		
+	});
+	
+$('#lecture_name').change(function() {
+		
+		var nam = $(this).val();
+		if(nam.length>13 || nam.length<3) {
+
+			$(this).css("background-color","red");
+			 alert("Name must be filled out");
+			  
+			
+
+		}
+		else {
+			<script type="text/javascript">
+			<!--
+
+			$(document).ready(function(){
+				
+			$(this).css("background-color","white");
+		}
+		
+	});
+
+
+$('#lecture_shortName').change(function() {
+	
+	var nam = $(this).val();
+	if(nam.length>10 || nam.length<1) {
+
+		$(this).css("background-color","red");
+		 alert("Short name must be filled out");
+		  
+		
+
+	}
+	else {
+		$(this).css("background-color","white");
+	}
+	
+});
+	
+
+
+	
+
+
+$('#lecture_phoneNo').change(function() {
+		
+		var nam = $(this).val();
+		if(nam.length!=10) {
+
+			$(this).css("background-color","red");
+			 alert("Phone no must be filled out");
+			  
+			
+
+				<script type="text/javascript">
+			<!--
+
+			$(document).ready(function(){
+				
+		}
+		else {
+			$(this).css("background-color","white");
+		}
+		
+	});
+	
+
+
+$('#lecture_address').change(function() {
+	
+	var nam = $(this).val();
+	if(nam.length>50 || nam.length<3) {
+
+		$(this).css("background-color","red");
+		 alert("Address no must be filled out");
+		  
+		
+
+	}
+	else {
+		$(this).css("background-color","white");
+	}
+	
+});
+
+
+
+
+
+	
+});
+//-->
+</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    <input type="submit" />
+	
+</form>
+{% endblock %}

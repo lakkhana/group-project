@@ -1,0 +1,11 @@
+{% extends 'UCSCRegistrationBundle::layout.html.twig' %}
+
+{% block title %}Import Student Data{% endblock %}
+
+{% block body %}
+<form action="{{ path('import_csv') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <input type="submit" />
+	
+</form>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'UCSCRegistrationBundle::layout.html.twig' %}
+
+
+{% block title %}Course Registration{% endblock %}
+
+{% block body %}
+<form action="{{ path('course_reg') }}" method="post" {{ form_enctype(form) }}>
+   <table border="1">  
+	<tr>
+	<th>Register No</th>
+	<th>Student Name</th>
+	<th>year</th>
+	
+	</tr>
+	 
+	{% for rec in form.students %}
+		 
+		<tr>
+		<td>{{ form_row(rec.regNo) }}</td>
+		<td>{{ form_row(rec.name) }}</td>
+		<td>{{ form_row(rec.year) }}</td>
+		
+		</tr>
+	
+	{% endfor %}
+	</table>
+    
+    
+
+    <input type="submit" />
+</form>
+{% endblock %}

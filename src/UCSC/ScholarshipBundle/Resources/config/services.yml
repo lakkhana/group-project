@@ -1,0 +1,7 @@
+parameters:
+#    ucsc_scholarship.example.class: UCSC\ScholarshipBundle\Example
+
+services:
+#    ucsc_scholarship.example:
+#        class: %ucsc_scholarship.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

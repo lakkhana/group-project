@@ -35,15 +35,46 @@ class Course
     protected $credit;
     
     /**
-     * @ORM\OneToMany(targetEntity="Result", mappedBy="courseID")
+     * @ORM\ManyToOne(targetEntity="Degree", inversedBy="courses")
+     * @ORM\JoinColumn(name="degreeID", referencedColumnName="degreeID")
      */
-    protected $results;
-
+    protected $degree;
+    
+    /**
+     * @var smallint $percentage
+     *
+     * @ORM\Column(name="percentage", type="smallint")
+     */
+    protected $percentage;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Semester", inversedBy="courses")
+     * @ORM\JoinColumn(name="semID", referencedColumnName="semID")
+     */
+    protected $sem;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Year", inversedBy="courses")
+     * @ORM\JoinColumn(name="yearID", referencedColumnName="yearID")
+     */
+    protected $year;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="AyearCourse", mappedBy="course")
+     */
+    protected $ayearcourses;
+    
     public function __construct()
     {
-        $this->results = new ArrayCollection();
+    	$this->ayearcourses = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+    	return $this->getCourseID();
     }
     
+
 
     /**
      * Set courseID
@@ -106,22 +137,102 @@ class Course
     }
 
     /**
-     * Add results
+     * Set percentage
      *
-     * @param UCSC\DatabaseBundle\Entity\Result $results
+     * @param smallint $percentage
      */
-    public function addResult(\UCSC\DatabaseBundle\Entity\Result $results)
+    public function setPercentage($percentage)
     {
-        $this->results[] = $results;
+        $this->percentage = $percentage;
     }
 
     /**
-     * Get results
+     * Get percentage
+     *
+     * @return smallint 
+     */
+    public function getPercentage()
+    {
+        return $this->percentage;
+    }
+
+    /**
+     * Set degree
+     *
+     * @param UCSC\DatabaseBundle\Entity\Degree $degree
+     */
+    public function setDegree(\UCSC\DatabaseBundle\Entity\Degree $degree)
+    {
+        $this->degree = $degree;
+    }
+
+    /**
+     * Get degree
+     *
+     * @return UCSC\DatabaseBundle\Entity\Degree 
+     */
+    public function getDegree()
+    {
+        return $this->degree;
+    }
+
+    /**
+     * Set sem
+     *
+     * @param UCSC\DatabaseBundle\Entity\Semester $sem
+     */
+    public function setSem(\UCSC\DatabaseBundle\Entity\Semester $sem)
+    {
+        $this->sem = $sem;
+    }
+
+    /**
+     * Get sem
+     *
+     * @return UCSC\DatabaseBundle\Entity\Semester 
+     */
+    public function getSem()
+    {
+        return $this->sem;
+    }
+
+    /**
+     * Set year
+     *
+     * @param UCSC\DatabaseBundle\Entity\Year $year
+     */
+    public function setYear(\UCSC\DatabaseBundle\Entity\Year $year)
+    {
+        $this->year = $year;
+    }
+
+    /**
+     * Get year
+     *
+     * @return UCSC\DatabaseBundle\Entity\Year 
+     */
+    public function getYear()
+    {
+        return $this->year;
+    }
+
+    /**
+     * Add ayearcourses
+     *
+     * @param UCSC\DatabaseBundle\Entity\AyearCourse $ayearcourses
+     */
+    public function addAyearCourse(\UCSC\DatabaseBundle\Entity\AyearCourse $ayearcourses)
+    {
+        $this->ayearcourses[] = $ayearcourses;
+    }
+
+    /**
+     * Get ayearcourses
      *
      * @return Doctrine\Common\Collections\Collection 
      */
-    public function getResults()
+    public function getAyearcourses()
     {
-        return $this->results;
+        return $this->ayearcourses;
     }
 }

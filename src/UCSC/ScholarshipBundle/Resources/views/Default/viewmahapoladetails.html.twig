@@ -1,0 +1,35 @@
+{% extends 'UCSCScholarshipBundle::layout.html.twig' %}
+
+{% block title %}Mahapola Details{% endblock %}
+
+{% block body %}
+
+	<th><B><u><center><font size="4"> Mahapola Details for Batch:{{ students[0].student.batch }} 
+	</font></center></u></B> </th>
+	<br />
+
+	<table >  
+	<tr>
+	 <th width="90px"> Batch </th>
+	 <th width="90px">Reg: No</th> 
+	 <th width="175px">Student Name</th>
+	 <th width="175px">Mahapola Type</th>
+	 <th width="100px">Total Amount</th>
+     <th></th>
+	 
+	</tr>
+	 
+	{% for std in students %}
+		 
+		<tr>
+		<td>{{ std.student.batch }}</td>
+		<td>{{ std.student.regNo }}</td>
+		<td>{{ std.student.name }}</td>
+		<td>{{ std.type.type }}</td>
+		<td>{{ std.total }}</td>
+		</tr>
+	{% endfor %}
+	
+	</table>
+	
+{% endblock %}

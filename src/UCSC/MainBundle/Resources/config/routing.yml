@@ -1,0 +1,30 @@
+homepage:
+    pattern:  /
+    defaults: { _controller: UCSCMainBundle:Default:index }
+
+maintab:
+    pattern: /{tab}
+    defaults: { _controller: UCSCMainBundle:Menu:menu }
+    requirements:
+        tab:  registration|exam|timetable|scholarship
+        
+login:
+    pattern:   /login
+    defaults:  { _controller: UCSCMainBundle:Security:login }
+
+login_check:
+    pattern:   /login_check
+    
+logout:
+    pattern:   /logout
+    
+register_check:
+    pattern:   /register
+    defaults:  { _controller: UCSCMainBundle:Security:register }
+    requirements:
+        _method:  POST
+        
+register_form:
+    pattern:   /register
+    defaults:  { _controller: UCSCMainBundle:Security:registerform }
+        

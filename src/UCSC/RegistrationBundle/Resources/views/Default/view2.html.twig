@@ -1,0 +1,13 @@
+{% extends 'UCSCRegistrationBundle::layout.html.twig' %}
+
+
+{% block title %}Details of Lecturer{% endblock %}
+
+
+{% block content %}
+
+{{ form_widget(form) }}
+{% if(is_granted('ROLE_ADMIN')) %}
+	<a href="{{ path('update_lecture_form',{'lid':lid}) }}">edit</a>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,13 @@
+timetable:
+    pattern:  /timetable/{type}
+    defaults: { _controller: UCSCTimeTableBundle:TimeTable:timetable }
+    requirements:
+        type:  enter|update
+    
+submittable:
+    pattern:  /timetable/{type}/{degree}/{year}/{sem}/{aid}
+    defaults: { _controller: UCSCTimeTableBundle:TimeTable:submittable }
+    
+view_timetable:
+    pattern:  /timetable/view
+    defaults: { _controller: UCSCTimeTableBundle:TimeTable:view_timetable }

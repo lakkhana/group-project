@@ -1,0 +1,18 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Results{% endblock %}
+
+
+{% block sidebar %}
+{% render "UCSCResultBundle:Result:recentArticles" with {'max': 40} %}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="result">
+{% block body %}
+{% endblock %}
+</div>
+
+{% endblock %}

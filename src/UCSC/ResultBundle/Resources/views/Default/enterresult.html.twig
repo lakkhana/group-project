@@ -1,0 +1,15 @@
+<table border="2" bgcolor="green">  
+	<tr>
+	<th align="center">Student regNo</th>
+	<th align="center">Result</th>
+	</tr>
+	 
+	{% for rec in results %}
+		 
+		<tr>
+		<td align="center">{{ rec.regNo }}</td>
+		<td align="center">{{ rec.score }}</td>
+		</tr>
+	
+	{% endfor %}
+	</table>

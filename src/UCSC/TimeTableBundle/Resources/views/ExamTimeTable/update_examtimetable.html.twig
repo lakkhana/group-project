@@ -1,0 +1,54 @@
+{% extends 'UCSCTimeTableBundle::layout.html.twig' %}
+
+{% block title %}Enter Time Table{% endblock %}
+
+{% block body %}
+	<form action="{{ path('selectcourse',{'type':type}) }}" method="post" {{ form_enctype(form) }}>
+	     {{ form_widget(form.degree) }}
+	     
+		{{ form_rest(form) }}
+		
+	    <input type="submit" />
+	</form>
+	
+	{% if method == 'post' %}
+	<form action="{{ path('submittable',{'type':type,'degree':degree,'sem':sem,'aid':aid}) }}" method="post" {{ form_enctype(form1) }}>
+	     
+	     <table border="1">
+			<tr>
+				<th>Time Slot</th>
+				<th>Monday</th>
+				<th>Tuesday</th>
+				<th>Wednesday</th>
+				<th>Thursday</th>
+				<th>Friday</th>
+			</tr>
+			{% for form_slot in form1.slots %}
+ 				 <div>
+ 				 <tr>
+ 				 	<td>{{ cycle(['8.00AM-9.00AM', '9.00AM-10.00AM','10.00AM-11.00AM',
+					'11.00AM-12.00AM','12.00AM-1.00PM','1.00PM-2.00PM','2.00PM-3.00PM',
+					'3.00PM-4.00PM','4.00PM-5.00PM','5.00PM-6.00PM'], loop.index-1) }}</td>
+   						
+   						
+   						<td>{{ form_widget(form_slot.monday) }}{{ form_widget(form_slot.monT) }}{{ form_widget(form_slot.mondayHall) }}</td>
+   						<td>{{ form_widget(form_slot.tuesday) }}{{ form_widget(form_slot.tueT) }}{{ form_widget(form_slot.tuesdayHall) }}</td>
+   						<td>{{ form_widget(form_slot.wednesday) }}{{ form_widget(form_slot.wedT) }}{{ form_widget(form_slot.wednesdayHall) }}</td>
+   						<td>{{ form_widget(form_slot.thursday) }}{{ form_widget(form_slot.thuT) }}{{ form_widget(form_slot.thursdayHall) }}</td>
+   						<td>{{ form_widget(form_slot.friday) }}{{ form_widget(form_slot.friT) }}{{ form_widget(form_slot.fridayHall) }}</td>
+   						
+   						
+  					</tr>
+ 				 </div>
+			{% endfor %}
+			
+		</table>
+		
+	{{ form_rest(form1) }}
+	<input type="submit" />
+	
+	
+	</form>
+	
+	{% endif %}
+{% endblock %}

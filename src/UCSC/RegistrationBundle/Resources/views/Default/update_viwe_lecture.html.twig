@@ -1,0 +1,12 @@
+{% extends 'UCSCRegistrationBundle::layout.html.twig' %}
+
+
+{% block title %}Update Lecture : {{sid}}{% endblock %}
+
+{% block body %}
+<form action="{{ path('update_lecture_reg') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+
+    <input type="submit" />
+</form>
+{% endblock %}
